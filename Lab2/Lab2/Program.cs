@@ -10,6 +10,9 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
+            Cancion song = new Cancion("a", "b", "c", "d");
+            Console.WriteLine(song.informacion());
+            Console.ReadKey();
         }
     }
 }
