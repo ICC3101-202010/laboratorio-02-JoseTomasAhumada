@@ -13,16 +13,32 @@ namespace Lab2
         private string artist;
         private string genre;
 
-        public Cancion(string name, string album, string artist, string genre)
+        public Cancion(string genre, string artist, string album, string name)
         {
-            this.name = name;
-            this.album = album;
-            this.artist = artist;
             this.genre = genre;
+            this.artist = artist;
+            this.album = album;
+            this.name = name;
+        }
+        public string Name()
+        {
+            return name;
+        }
+        public string Album()
+        {
+            return album;
+        }
+        public string Artist()
+        {
+            return artist;
+        }
+        public string Genre()
+        {
+            return genre;
         }
         public string informacion()
         {
-            return ("nombre: "+ name + ",álbum: " + album + ",artista: " + artist + ",género: " + genre);
+            return ("Género: "+ Genre() + ", Artista: " + Artist() + ", Álbum: " + Album() + ", Nombre: " + Name());
         }
     }
 }
