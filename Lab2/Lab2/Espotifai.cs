@@ -28,22 +28,6 @@ namespace Lab2
             genres.Add(c2.Genre());
             genres.Add(c3.Genre());
         }
-        public List<string> Names()
-        {
-            return names;
-        }
-        public List<string> Albums()
-        {
-            return albums;
-        }
-        public List<string> Artists()
-        {
-            return artists;
-        }
-        public List<string> Genres()
-        {
-            return genres;
-        }
         public bool AgregarCancion(Cancion c2)
         {
             if (names.Contains(c2.Name()) == true)
@@ -68,6 +52,65 @@ namespace Lab2
             for (int i = 0; i < names.Count; ++i)
             {
                 Console.WriteLine("Género: " + genres[i] + " Álbum: " + albums[i] + " Artista: " + artists[i] + " Nombre: " + names[i]);
+            }
+        }
+        public Cancion[] CancionesPorCriterio(string criterio, string valor)
+        {
+            Cancion []resultado = { };
+            
+             if (criterio == "nombre")
+            {
+                if (names.Contains(valor) == true)
+                {
+                    
+                    return resultado;
+                }
+                else
+                {
+                    Console.WriteLine("Error: el valor ingresado no es válido.");
+                    return resultado;
+                }
+            }
+            else if (criterio == "album")
+            {
+                if (albums.Contains(valor) == true)
+                {
+                    return resultado;
+                }
+                else
+                {
+                    Console.WriteLine("Error: el valor ingresado no es válido.");
+                    return resultado;
+                }
+            }
+            else if (criterio == "artista")
+            {
+                if (artists.Contains(valor) == true)
+                {
+                    return resultado;
+                }
+                else
+                {
+                    Console.WriteLine("Error: el valor ingresado no es válido.");
+                    return resultado;
+                }
+            }
+            else if (criterio == "genero")
+            {
+                if (genres.Contains(valor) == true)
+                {
+                    return resultado;
+                }
+                else
+                {
+                    Console.WriteLine("Error: el valor ingresado no es válido.");
+                    return resultado;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: el criterio ingresado no es válido.");
+                return resultado;
             }
         }
     }

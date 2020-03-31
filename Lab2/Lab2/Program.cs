@@ -16,7 +16,7 @@ namespace Lab2
             Espotifai s1 = new Espotifai(song1, song2, song3);
 
             Console.WriteLine("Bienvenido a Espotifai.");
-            Console.WriteLine("Presione [1] si quiere ver todas las canciones, [2] si es que desea agreagr una nueva canción, o [3] para salir:");
+            Console.WriteLine("Presione [1] si quiere ver todas las canciones, [2] si es que desea agreagr una nueva canción,[3] para ver canciones por criterio o [4] para salir:");
             string option = Console.ReadLine();
             if (option == "1")
             {
@@ -37,12 +37,16 @@ namespace Lab2
             }
             else if (option == "3")
             {
+                Console.WriteLine("Ingrese un criterio válido:");
+                string crit = Console.ReadLine();
+                Console.WriteLine("Ingrese un valor válido:");
+                string value = Console.ReadLine();
+                Console.WriteLine(s1.CancionesPorCriterio(crit, value));
+            }
+            else if (option == "4")
+            {
                 Console.WriteLine("Hasta luego.");
             }
-            //Console.WriteLine(s1.AgregarCancion(song4));
-            //Console.WriteLine(song1.informacion());
-            //Console.WriteLine(song2.informacion());
-            //Console.WriteLine(song3.informacion());
             Console.ReadKey();
 
         }
